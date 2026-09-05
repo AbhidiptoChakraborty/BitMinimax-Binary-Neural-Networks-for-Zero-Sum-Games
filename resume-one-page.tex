@@ -1,0 +1,184 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins and vertical density only.
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-.95in}
+\addtolength{\textheight}{2.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, topsep=0pt, itemsep=0pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=-1pt, itemsep=-2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Abhidipto(Abhi) Chakraborty} \\ \vspace{1pt}
+    Austin, TX \\ \vspace{1pt}
+    \small
+    \raisebox{-0.1\height}\faPhone\ 640-203-8028 ~
+    \href{mailto:chakraborty.abhidipto@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{chakraborty.abhidipto@gmail.com}} ~
+    \href{https://www.linkedin.com/in/abhidipto}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/abhidipto}}
+    \vspace{-10pt}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{The University of Texas at Austin}{Aug. 2024 - May 2028}{B.S. in Computer Science and Mathematics}{Austin, TX}
+\resumeItemListStart
+\resumeItem{GPA: 3.91/4.00}
+\resumeItem{Coursework: Data Structures and Algorithms, Computer Organization and Architecture, Discrete Mathematics, Quantum Computing, Operating Systems, Software Engineering, Linear Algebra, Advanced Probability.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Wissen Infotech}{May 2026 -- Aug. 2026}{Backend AI Platform Engineer }{}
+\resumeItemListStart
+\resumeItem{Engineered backend services for Wise AI Gateway, a LiteLLM-based SaaS platform centralizing 4+ LLM providers (Azure OpenAI, Anthropic, Bedrock) via a unified gateway architecture reducing integration overhead by 65\%, and designed an RDS-native pg\_cron histogram pipeline delivering range-correct tail-latency analytics with precomputed rollups across teams, users, and models.}
+\resumeItem{Developed 42 FastAPI endpoints across 7 domains (team, user, model, API key, MCP server, budget, analytics), replacing manual gateway provisioning with automated workflows that cut admin setup time from hours to minutes.}
+\resumeItem{Designed service/client abstractions for Control Plane--LiteLLM integration, centralizing 20+ proxy operations behind one backend boundary, standardizing request handling and error propagation, and eliminating 75\%+ of duplicated integration code.}
+\resumeItem{Implemented transactional onboarding workflows with budget validation, bulk CSV provisioning (supporting 100+ users/batch), automated API key generation, and compensating rollback logic, reducing spend-limit misconfiguration incidents by 80\%.}
+\resumeItem{Improved Data Plane scalability and service authentication by replacing per-request analytics database connections with a shared lifecycle-managed asyncpg connection pool (capped at 5 concurrent connections) and building short-lived 300-second RS256-signed gateway JWTs for MCP traffic, reducing RDS connection pressure by an estimated 80\% under concurrent dashboard load.}
+\resumeItemListEnd
+
+\resumeSubheading{Samsa Trading - Startup}{Jan. 2026 -- Mar. 2026}{Backend Software Developer}{}
+\resumeItemListStart
+\resumeItem{Architected and developed a high-performance Node.js backend with PostgreSQL integration for a prediction market platform, processing 100,000+ transactions across 500+ markets using LMSR-based automated market making and RESTful microservices.}
+\resumeItem{Engineered concurrent trade execution and settlement workflows, reducing API response times by 45\%, increasing system throughput by 3$\times$, and maintaining 99.9\% transactional consistency under peak simulated load.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{AI Research Intern at Rochester Institute of Technology}{May 2026 -- Aug. 2026}{Undergraduate Researcher} {}
+\resumeItemListStart
+\resumeItem{Developed a scalable multi-LLM evaluation pipeline analyzing 16,000+ iterative rewrite trajectories across GPT, Claude, Gemini, and open-source models, training stylometric LLM-vs-human classifiers over embedding representations to identify model-specific stylistic attractors ("LLM means") and quantify convergence behavior, cross-model oscillation, and within-model drift in scientific writing.}
+\resumeItem{Engineered automated benchmarking infrastructure processing 100,000+ pairwise LLM-judge evaluations using Bradley-Terry ranking, BERTScore, embedding similarity, and statistical significance testing to quantify rewrite quality and model consistency.}
+\resumeItem{Built reproducible data collection and experimentation workflows leveraging OpenAI, Anthropic, and Google APIs, including automated training-data contamination probing to validate corpus integrity, enabling large-scale analysis of model behavior across 400+ research abstracts and multiple cross-model evaluation settings.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\vspace{-6pt}
+\resumeSubHeadingListStart
+\resumeProjectHeading{\textbf{Async Ticket Management Platform} $|$ \emph{FastAPI, PostgreSQL, RabbitMQ, Docker, SQLAlchemy}}{}
+\resumeItemListStart
+\resumeItem{Architected a production-grade, async-first ticket management backend on FastAPI, PostgreSQL, and SQLAlchemy 2.0, decoupling request handling from downstream work via RabbitMQ-backed worker services and a Redis caching layer for hot read paths, thereby cutting p95 request latency by 40\% under concurrent load while scaling to 5,000+ simulated users and 50,000+ ticket records.}
+\resumeItem{Built a JWT/OAuth2 authentication layer with bcrypt-hashed credentials and fine-grained RBAC, enforcing admin/user permission boundaries at the endpoint level and reliably orchestrating 10,000+ asynchronous ticket-notification events through the message queue without data loss.}
+\resumeItem{Containerized the full service stack with Docker and Docker Compose and shipped a GitHub Actions CI/CD pipeline (lint $\rightarrow$ test $\rightarrow$ build $\rightarrow$ deploy), cutting deployment effort by 80\%; backed releases with a pytest suite (unit + integration, async test clients) hitting 90\%+ coverage to catch regressions pre-merge.}
+\resumeItemListEnd
+\vspace{-10pt}
+
+\resumeProjectHeading{\textbf{BitMinimax: Binary Neural Networks for Zero-Sum Games} $|$ \emph{PyTorch, Binary Transformers, Quantization}}{}
+\resumeItemListStart
+\resumeItem{Built a 3-layer binary Transformer that represents action payoff profiles as tokens and uses straight-through estimators, binary linear projections, multi-head attention, LayerNorm residual blocks, and packed 1-bit weight export, making 87\% of learned weights binary.}
+\resumeItem{Trained dual-player mixed strategies with a NashConv-driven self-play objective and 32-step entropic Mirror-Prox equilibrium targets, reducing exploitability by 34\% under payoff perturbations.}
+\resumeItem{Enforced player-swap and action-permutation equivariance and evaluated generalization across 4 structured zero-sum game families, achieving 27\% lower NashConv than a full-precision baseline.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=0pt, parsep=0pt]
+\small{\item{
+\textbf{Languages}{: Python, Java, JavaScript, C, C++, SQL, Swift.} \\
+\textbf{Frameworks/Libraries}{: FastAPI, Angular, Node.js, Django, SQLAlchemy, SwiftUI, Pytest, Alembic, Pydantic.} \\
+\textbf{Developer Tools}{: Git, GitHub, Docker, AWS(EC2, RDS), Kubernetes, Linux, VS Code, GitHub Actions, Docker Compose.} \\
+\textbf{Technologies}{: PostgreSQL, Redis, REST APIs, RabbitMQ, JWT Authentication, CI/CD, LiteLLM, Microservices, RBAC.}
+}}
+\end{itemize}
+\vspace{-18pt}
+\end{document}

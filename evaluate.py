@@ -6,8 +6,8 @@ from pathlib import Path
 
 import torch
 
-from bitminimax.binary import BinaryMinimaxPolicy
 from bitminimax.benchmarks import BenchmarkSuite
+from bitminimax.binary import BinaryMinimaxPolicy
 from bitminimax.deployment import estimate_bit_operations, export_packed_binary_model
 from bitminimax.games import ZeroSumGameDistribution, expected_payoff, exploitability
 from bitminimax.metrics import summarize

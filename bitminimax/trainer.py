@@ -2,14 +2,11 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
-
 import torch
 from torch import Tensor, nn
 from torch.nn import functional as F
 
-from .games import ZeroSumGameDistribution, expected_payoff, exploitability
-from .games import transform_game
+from .games import ZeroSumGameDistribution, expected_payoff, exploitability, transform_game
 from .solvers import mirror_prox
 
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 import torch
-from torch import Tensor, nn
+from torch import nn
 
 from .games import ZeroSumGameDistribution
 from .metrics import summarize

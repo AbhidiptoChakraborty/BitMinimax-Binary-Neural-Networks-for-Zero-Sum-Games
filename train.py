@@ -6,8 +6,8 @@ from pathlib import Path
 import torch
 from tqdm import trange
 
-from bitminimax.binary import BinaryMinimaxPolicy
 from bitminimax.benchmarks import BenchmarkSuite
+from bitminimax.binary import BinaryMinimaxPolicy
 from bitminimax.games import ZeroSumGameDistribution
 from bitminimax.trainer import MinimaxTrainer, TrainConfig
 
