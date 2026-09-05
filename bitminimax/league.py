@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Mapping
 
 import torch
+
 from .games import ZeroSumGameDistribution, expected_payoff, exploitability
 
 

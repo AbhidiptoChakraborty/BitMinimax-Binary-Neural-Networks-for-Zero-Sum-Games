@@ -11,7 +11,7 @@ def binary_parameter_ratio(model: nn.Module) -> float:
     """Fraction of learned weight values that are used as binary forward weights."""
     total = binary = 0
     for module in model.modules():
-        if hasattr(module, "weight") and isinstance(getattr(module, "weight"), Tensor):
+        if hasattr(module, "weight") and isinstance(module.weight, Tensor):
             count = module.weight.numel()
             total += count
             binary += count if module.__class__.__name__ == "BinaryLinear" else 0
