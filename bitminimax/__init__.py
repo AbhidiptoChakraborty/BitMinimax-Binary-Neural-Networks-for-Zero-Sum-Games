@@ -5,4 +5,4 @@ from .benchmarks import BenchmarkSuite
 from .binary import BinaryMinimaxPolicy
 from .games import ZeroSumGameDistribution
 
-__all__ = ["BinaryMinimaxPolicy", "BenchmarkSuite", "FullPrecisionMinimaxPolicy", "MirrorProxOracle", "UniformPolicy", "ZeroSumGameDistribution"]
+__all__ = ["BenchmarkSuite", "BinaryMinimaxPolicy", "FullPrecisionMinimaxPolicy", "MirrorProxOracle", "UniformPolicy", "ZeroSumGameDistribution"]
